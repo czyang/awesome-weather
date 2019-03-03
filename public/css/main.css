@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700");
+body {
+  background: #ffffff !important;
+  font-family: "Roboto", sans-serif; }
+
+.theme-color {
+  color: #7602c4 !important; }
+
+.theme-sub-color {
+  color: #7a3ba5 !important; }
+
+.theme-color-bg {
+  background-color: #7602c4 !important; }
+
+.min-w {
+  min-width: 350px; }
+
+.my-nav {
+  color: #7602c4 !important;
+  background-color: #7602c4;
+  min-height: 64px;
+  height: auto;
+  margin: 0px;
+  padding: 0px; }
+
+.my-nav-a {
+  color: #ffffff !important; }
+
+/* navbar */
+.navbar-light {
+  background-color: #7602c4;
+  border-color: #ffffff; }
+
+/* Title */
+.navbar-light .navbar-brand {
+  color: #ffffff !important;
+  font-size: 26px;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle; }
+
+/* Link */
+.navbar-light .navbar-nav > li > a {
+  color: #ffffff !important;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle; }
+
+.nav > li > a {
+  color: #ffffff; }
+
+.nav .nav-tabs {
+  background-color: #7602c4 !important; }
+
+.nav-tabs {
+  border-bottom-color: #7602c4 !important; }
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #7602c4 !important; }
+
+.nav {
+  background-color: #7602c4 !important; }
+
+.div-bg {
+  background-color: #7602c4; }

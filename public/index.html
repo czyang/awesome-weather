@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+	 crossorigin="anonymous">
+
+	<!-- Weather Icon -->
+	<link rel="stylesheet" href="./css/weather-icons.min.css">
+	<link rel="stylesheet" href="./css/weather-icons-wind.min.css">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<!-- Chart JS -->
+	<script src="./lib/Chart.bundle.min.js"></script>
+
+	<link rel="stylesheet" href="./css/main.css">
+
+	<title>Awesome Weather APP</title>
+
+</head>
+
+<body>
+	<div class="my-nav min-w">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 pt-3">
+					<div class="d-inline">
+						<a class="my-nav-a" href="#">
+							<i class="fas fa-cloud fa-2x"></i>
+						</a>
+					</div>
+					<div class="pt-2 d-inline pl-3" style="font-size: 20pt;">
+						<p class="my-nav-a d-inline">Awesome Weather </p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 pt-3 pb-3 text-right">
+					<form class=" my-auto d-inline">
+						<div class="input-group">
+							<input id="search-input" type="text" class="form-control border border-right-0" placeholder="Auto Location, or US Zip Code, 94016">
+							<span class="input-group-append">
+								<button class="btn btn-outline-secondary border border-left-0" type="button" onclick="onClickGetLocation()">
+									<i class="fas fa-location-arrow" style="color:#fff;"></i>
+								</button>
+								<button class="btn btn-outline-secondary border border-left-0" type="button" onclick="onClickSearch()">
+									<i class="fas fa-search" style="color:#fff;"></i>
+								</button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Tabs -->
+	<div class="div-bg" style="min-width:350px; ">
+		<div class="container">
+			<ul class="nav nav-tabs" role="tablist" style="">
+				<li class="nav-item">
+					<a class="nav-link active" href="#tab1" role="tab" data-toggle="tab">TODAY</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#tab2" role="tab" data-toggle="tab">TOMORROW</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#tab3" role="tab" data-toggle="tab">5 DAYS</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Tab Panes -->
+	<div class="container mt-2 min-w">
+		<div class="tab-content">
+			<!-- 1st Tab -->
+			<div role="tabpanel" class="tab-pane fade show active" id="tab1">
+				<div class="card w-100">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-7 col-sm-7 col-lg-7 ">
+								<span id="temp_label_1" class="theme-color" style="font-size:70px;">--</span>
+								<span class="theme-color" style="font-size:40px;">℉</span>
+							</div>
+							<div class="col-5 col-sm-5 col-lg-5 text-right">
+								<span><i id="big_icon_1" class="wi wi-day-sunny theme-color mr-1" style="font-size:70px; margin-left:-20px;"></i></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-7">
+								<p id="sub_label_1_1" class="mb-0 ml-1 mt-0" style="font-size:15px;color:#424242;">-</p>
+								<p id="sub_label_1_2" class="mb-0 ml-1 mt-0" style="font-size:15px;color:#424242;">-</p>
+								<p id="city_name_1" class="mb-0 ml-1 theme-color" style="font-size:20px;">-</p>
+							</div>
+							<div class="col-5 text-right">
+								<p id="desc_name_1" class="mb-0 ml-3 theme-color" style="font-size:30px;">-</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card w-100 mt-2">
+					<div class="card-body">
+						<div class="">
+							<canvas id="temp_chart" width="400" height="100"></canvas>
+						</div>
+					</div>
+				</div>
+
+				<div class="card w-100 mt-2 mb-2">
+					<div class="card-body">
+						<ul id="list-group-1" class="list-group list-group-flush">
+							<!-- li 8 items -->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- 2nd Tab -->
+			<div role="tabpanel" class="tab-pane fade" id="tab2">
+				<div role="tabpanel" class="tab-pane fade show active" id="tab1">
+					<div class="card w-100">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-7 col-sm-7 col-lg-7">
+									<span id="tomorrow-max-label" class="theme-color" style="font-size:45px;">--</span>
+									<span class="theme-color" style="font-size:40px;">℉</span>
+									<span id="tomorrow-min-label" class="theme-sub-color" style="font-size:25px;">--</span>
+									<span class="theme-sub-color" style="font-size:20px;">℉</span>
+								</div>
+								<div class="col-5 col-sm-5 col-lg-5 text-right">
+									<span><i id="tomorrow-icon" class="wi wi-day-sunny theme-color" style="font-size:70px; margin-left:-20px;"></i></span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7">
+									<p id="tomorrow-humidity" class="mb-0 ml-1 mt-0" style="font-size:15px;color:#424242;">-</p>
+									<p id="tomorrow-desc" class="mb-0 ml-1 mt-0" style="font-size:15px;color:#424242;">-</p>
+									<p id="tomorrow-city-name" class="mb-0 ml-1 theme-color" style="font-size:20px;">-</p>
+								</div>
+								<div class="col-5 text-right mt-3">
+									<p id="tomorrow-main" class="mb-0 ml-3 theme-color" style="font-size:30px;">-</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card w-100 mt-2">
+						<div class="card-body">
+							<div class="">
+								<canvas id="temp-chart-2" width="400" height="100"></canvas>
+							</div>
+						</div>
+					</div>
+
+					<div class="card w-100 mt-2">
+						<div class="card-body">
+							<ul id="list-group-2" class="list-group list-group-flush">
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 3rd Tab -->
+			<div role="tabpanel" class="tab-pane fade" id="tab3">
+				<div class="card w-100 mt-2">
+					<div class="card-body">
+						<ul id="list-group-3" class="list-group list-group-flush">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="alert-modal-title"></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p id="alert-modal-desc"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	<script src="charts.js"></script>
+	<script src="setup_ui.js"></script>
+	<script src="index.js"></script>
+</body>
+
+</html>

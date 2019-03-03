@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
+
+$awesome_purple: #7602c4;
+$awesome_purple_sub: #7a3ba5;
+$awesome_white: #ffffff;
+
+$robot-font: 'Roboto', sans-serif;
+
+body { 
+  background: $awesome_white !important;
+  font-family: $robot-font;
+}
+
+.theme-color {
+  color: $awesome_purple !important;
+}
+
+.theme-sub-color {
+  color: $awesome_purple_sub !important;
+}
+
+.theme-color-bg {
+  background-color: $awesome_purple !important;
+}
+
+.min-w {
+  min-width:350px;
+}
+
+.my-nav {
+  color: $awesome_purple !important;
+  background-color: $awesome_purple;
+  min-height: 64px;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+}
+
+.my-nav-a {
+  color: $awesome_white !important;
+}
+
+/* navbar */
+.navbar-light {
+  background-color: $awesome_purple;
+  border-color: $awesome_white;
+}
+
+/* Title */
+.navbar-light .navbar-brand {
+  color: $awesome_white !important;
+  font-size: 26px;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+/* Link */
+.navbar-light .navbar-nav > li > a {
+  color: $awesome_white !important;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.nav > li > a {
+  color: $awesome_white;
+}
+
+.nav .nav-tabs {
+  background-color: $awesome_purple !important;
+}
+
+.nav-tabs {
+  border-bottom-color:$awesome_purple !important;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: $awesome_purple !important;
+}
+
+.nav {
+  background-color: $awesome_purple !important;
+}
+
+.div-bg {
+  background-color: $awesome_purple;
+}
