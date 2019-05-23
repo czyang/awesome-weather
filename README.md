@@ -1,6 +1,6 @@
-# Awesome Weather APP
+# ☁️ Awesome Weather APP
 
-This is a website APP made with NodeJS back-end and HTML5 front-end. It's utilize the OpenWeatherMap Free API. To get the data from API and then displayed on the front-end. 
+This is a website APP made with NodeJS back-end and HTML5 front-end. It utilizes the OpenWeatherMap Free API. To get the data from API and then displayed on the front-end. *This APP is compatible with mobile browser*
 
 
 ## Structure
