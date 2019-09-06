@@ -14,7 +14,7 @@ awesome-weather/
 
 ## Production Preview
 
-You can access the App via: https://codingmelody.com/awe/ 
+You can access the App via: https://awe.codingmelody.com 
 
 
 ## Install
